@@ -1,5 +1,5 @@
 import json
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
 
 import TextClock
 
@@ -19,9 +19,9 @@ def hello():
 
 @app.route('/update')
 def reload():
-    return json.dumps(list(TextClock.render()) + [(1000, 10, 10)])
+    return json.dumps(list(TextClock.render()))
     
 
 if __name__ == '__main__':
-    app.debug=True
+    app.debug = True
     app.run()

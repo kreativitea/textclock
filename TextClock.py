@@ -11,7 +11,7 @@ NUMBERS = dict(enumerate(
 
 
 class Word(collections.namedtuple('Word', 'row start end')):
-    def render(face):
+    def render(self, face):
         return face[self.row][self.start:self.end]
 
 
