@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>ClocKFacE</title>
+    <meta name="description" content="ClocKFacE">
+    <meta name="author" content="Mike Omoto">
+
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700,500' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <script src="{{ url_for('static', filename='jquery-1.11.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='underscore-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='backbone-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='clockface.js') }}"></script>
+
+    <div class="viewport">
+        <table class="clock">
+            {% for row in clockface %}
+                {% set row_loop = loop %}
+                <tr class="row" id="{{ row_loop.index0 }}">
+                    {% for char in row %}
+                        {% set col_loop = loop %}
+                        <td class="char" id="{{ col_loop.index0 }}">
+                            <div id="row-{{ row_loop.index0 }}-col-{{ col_loop.index0 }}">{{ char }}</div>
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% else %}
+                <div>Nothing here!</div>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

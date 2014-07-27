@@ -1,0 +1,47 @@
+ body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    background-color: #2d3c58;
+}
+
+    body table.clock {
+        border-collapse: collapse;
+        border-width: 0px;
+        color: lightgrey;
+        margin: auto;
+        background-color: #384355;
+    }
+
+    body tr.row {
+        align-content: center;
+    }
+
+    body td.char
+    {
+        height: 40px;
+        width: 40px;
+        align-content: center;
+        text-align: center;
+        color: #3a517a;
+
+    }
+
+        body td.char div {
+            transition: color 2s ease-in-out;
+            -moz-transition: color 2s ease-in-out;
+            -o-transition: color 2s ease-in-out;
+            -webkit-transition: color 2s ease-in-out;
+        }
+
+    body div.viewport {
+        width: 440px;
+        height: 440px;
+
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        margin: auto;
+    }
